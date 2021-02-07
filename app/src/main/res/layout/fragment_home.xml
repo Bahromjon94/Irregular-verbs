@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C3C1C1"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.HomeFragment">
 
     <GridView
         android:id="@+id/home_grid_root"

@@ -1,4 +1,4 @@
-package uz.technickpro.irregularverbs.ui.dashboard;
+package uz.technickpro.irregularverbs.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

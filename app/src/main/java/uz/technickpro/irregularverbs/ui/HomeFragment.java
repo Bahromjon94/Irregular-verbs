@@ -1,4 +1,4 @@
-package uz.technickpro.irregularverbs.ui.home;
+package uz.technickpro.irregularverbs.ui;
 
 import android.content.Context;
 import android.os.Bundle;
