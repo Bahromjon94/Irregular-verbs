@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3C1C1"
+    tools:context=".ui.home.HomeFragment">
+
+    <GridView
+        android:id="@+id/home_grid_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:padding="6dp"
+        android:scrollbars="none" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
