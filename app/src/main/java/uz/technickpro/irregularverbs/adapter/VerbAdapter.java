@@ -1,4 +1,4 @@
-package uz.technickpro.irregularverbs;
+package uz.technickpro.irregularverbs.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import uz.technickpro.irregularverbs.R;
+import uz.technickpro.irregularverbs.Verb;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 

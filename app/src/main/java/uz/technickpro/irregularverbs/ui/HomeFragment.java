@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,7 @@ import java.util.List;
 
 import uz.technickpro.irregularverbs.R;
 import uz.technickpro.irregularverbs.Verb;
-import uz.technickpro.irregularverbs.VerbAdapter;
+import uz.technickpro.irregularverbs.adapter.VerbAdapter;
 
 public class HomeFragment extends Fragment {
 
@@ -58,26 +57,26 @@ public class HomeFragment extends Fragment {
     public void verbList() {
 
         verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
-        verbs.add(new Verb(getResources().getString(R.string.be), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.beat), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.begin), "Begin", "began", "begun", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.become), "Become", "became", "become", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.bend), "Bend", "bent", "Bent", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.bet), "Bet", "bet", "bet", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.bit), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.blow), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.break1), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.bring), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.broadcast), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.build), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.burst), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.buy), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.catch1), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.choose), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.come), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.cost), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.cut), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.deal), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
+        verbs.add(new Verb(getResources().getString(R.string.dig), "Be", "Was, Were", "Been", "[ bi; strong form bi: ]", "Was, Were", "bi:n", "be - bo'lmoq degani"));
 
     }
 

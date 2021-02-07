@@ -23,19 +23,19 @@
                 android:id="@+id/item_verb_add_bookmark_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_bookmark_border_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_word_text" />
+                app:layout_constraintTop_toTopOf="@id/item_word_text"
+                tools:src="@drawable/ic_baseline_bookmark_border_24" />
 
 
             <ImageView
                 android:id="@+id/item_verb_added_bookmark_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_bookmark_24"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_word_text" />
+                app:layout_constraintTop_toTopOf="@id/item_word_text"
+                tools:src="@drawable/ic_baseline_bookmark_24" />
 
             <TextView
                 android:id="@+id/item_word_text"
@@ -51,7 +51,7 @@
                 android:id="@+id/item_verb_one_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_word_text"
                 tools:text="Verb one" />
@@ -60,7 +60,7 @@
                 android:id="@+id/item_verb_two_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_verb_one_text"
                 tools:text="Verb two" />
@@ -69,7 +69,7 @@
                 android:id="@+id/item_verb_three_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_verb_two_text"
                 tools:text="Verb three" />
