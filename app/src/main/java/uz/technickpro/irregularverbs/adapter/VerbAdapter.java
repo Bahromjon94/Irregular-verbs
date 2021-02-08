@@ -60,8 +60,8 @@ public class VerbAdapter extends BaseAdapter {
         verbOne.setText(verbs.get(position).getV1());
         verbTwo.setText(verbs.get(position).getV2());
         verbThree.setText(verbs.get(position).getV3());
-        imgAddToBookmark.setImageResource(R.drawable.ic_baseline_bookmark_border_24);
-        imgAddedToBookmark.setImageResource(R.drawable.ic_baseline_bookmark_24);
+        imgAddToBookmark.setImageResource(R.drawable.ic_baseline_bookmark_border_24_red);
+        imgAddedToBookmark.setImageResource(R.drawable.ic_baseline_bookmark_24_red);
 
 
         imgAddToBookmark.setOnClickListener(new View.OnClickListener() {
@@ -85,8 +85,6 @@ public class VerbAdapter extends BaseAdapter {
                 Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was deleted");
             }
         });
-
-
 
 
         return convertView;
