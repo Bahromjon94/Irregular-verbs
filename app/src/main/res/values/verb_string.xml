@@ -89,13 +89,13 @@
     <string name="partake">Partake</string>
     <string name="pay">Pay</string>
     <string name="plead">Plead</string>
-    <string name="preset">Preset</string>
+    <string name="preset" translatable="false">Preset</string>
     <string name="prove">Prove</string>
     <string name="put">Put</string>
     <string name="quit">Quit</string>
     <string name="read">Read</string>
     <string name="relay">Relay</string>
-    <string name="rend">Rend</string>
+    <string name="rend" translatable="false">Rend</string>
     <string name="rid">Rid</string>
     <string name="ring">Ring</string>
     <string name="rise">Rise</string>
@@ -120,7 +120,7 @@
     <string name="slay">Slay</string>
     <string name="sleep">Sleep</string>
     <string name="slide">Slide</string>
-    <string name="slit">Slit</string>
+    <string name="slit" translatable="false">Slit</string>
     <string name="smell">Smell</string>
     <string name="sow">Sow</string>
     <string name="speak">Speak</string>
@@ -156,7 +156,7 @@
     <string name="thrive">Thrive</string>
     <string name="throw_">Throw</string>
     <string name="thrust">Thrust</string>
-    <string name="typeset">Typeset</string>
+    <string name="typeset" translatable="false">Typeset</string>
     <string name="undergo">Undergo</string>
     <string name="understand">Understand</string>
     <string name="wake">Wake</string>

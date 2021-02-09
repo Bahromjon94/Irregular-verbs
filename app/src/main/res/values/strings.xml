@@ -2,14 +2,15 @@
     <string name="app_name">Irregular Verbs</string>
     <string name="title_activity_head">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_bookmark">Bookmarks</string>
+    <string name="title_bookmark">Chosen</string>
     <string name="title_info">Info</string>
     <string name="email">Email</string>
     <string name="send_mail">Send mail</string>
-    <string name="email_address">bahromjon.ergashboyev@gmail.com</string>
+    <string name="email_address" translatable="false">bahromjon.ergashboyev@gmail.com</string>
     <string name="tg_channel">Telegram channel</string>
-    <string name="tg_ch_address">https://t.me/technickpro</string>
-    <string name="instagram">https://instagram.com/i.m_bahromjon</string>
-    <string name="facebook">https://facebook.com/bahromjon.polat</string>
+    <string name="tg_ch_address" translatable="false">https://t.me/technickpro</string>
+    <string name="instagram" translatable="false">https://instagram.com/i.m_bahromjon</string>
+    <string name="facebook" translatable="false">https://facebook.com/bahromjon.polat</string>
+    <string name="bid">bid</string>
 
 </resources>
