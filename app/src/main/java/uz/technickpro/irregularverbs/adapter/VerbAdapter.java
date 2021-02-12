@@ -46,7 +46,6 @@ public class VerbAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         convertView = LayoutInflater.from(context).inflate(R.layout.item_verb, parent, false);
 
         TextView word = convertView.findViewById(R.id.item_word_text);

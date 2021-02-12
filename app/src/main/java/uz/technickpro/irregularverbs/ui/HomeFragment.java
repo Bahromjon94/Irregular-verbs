@@ -6,50 +6,53 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import uz.technickpro.irregularverbs.R;
 import uz.technickpro.irregularverbs.Verb;
-import uz.technickpro.irregularverbs.adapter.VerbAdapter;
+import uz.technickpro.irregularverbs.adapter.VerbRecyclerAdapter;
 
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
-    private VerbAdapter adapter;
-    private GridView gridView;
+
+    private VerbRecyclerAdapter rAdapter;
+    private RecyclerView rView;
     private List<Verb> verbs;
     private Context context;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: worked");
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        gridView = root.findViewById(R.id.home_grid_root);
+        rView = root.findViewById(R.id.rView);
+        rView.setHasFixedSize(true);
         verbs = new ArrayList<>();
-        adapter = new VerbAdapter(context, verbs);
-        gridView.setAdapter(adapter);
+
+        GridLayoutManager layoutManager = new GridLayoutManager(context, 2);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+        rView.setLayoutManager(layoutManager);
+        rAdapter = new VerbRecyclerAdapter(context, verbs);
+        rView.setAdapter(rAdapter);
 
         verbList();
 
-        Log.d(TAG, "onCreateView: is working");
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        rView.setRecyclerListener(new RecyclerView.RecyclerListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context, "You clicked " + verbs.get(position).getWord(), Toast.LENGTH_SHORT).show();
+            public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
+                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
-
         return root;
     }
 

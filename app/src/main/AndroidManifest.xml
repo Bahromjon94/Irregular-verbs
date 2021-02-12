@@ -12,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IrregularVerbs">
-        <activity android:name=".FullInfoActivity"></activity>
+        <activity android:name=".FullInfoActivity" android:screenOrientation="portrait">
+        </activity>
         <activity
-            android:name=".HeadActivity"
+            android:name=".HeadActivity" android:screenOrientation="portrait"
             android:label="@string/title_activity_head" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

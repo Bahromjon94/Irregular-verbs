@@ -4,18 +4,18 @@ public class Verb {
 
     private String word;
     private String v1, v2, v3;
-    private String propV1, propV2, propV3;
+    private String pronV1, pronV2, pronV3;
     private String description;
 
 
-    public Verb(String word, String v1, String v2, String v3, String propV1, String propV2, String propV3, String description) {
+    public Verb(String word, String v1, String v2, String v3, String pronV1, String pronV2, String pronV3, String description) {
         this.word = word;
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
-        this.propV1 = propV1;
-        this.propV2 = propV2;
-        this.propV3 = propV3;
+        this.pronV1 = pronV1;
+        this.pronV2 = pronV2;
+        this.pronV3 = pronV3;
         this.description = description;
     }
 
@@ -58,28 +58,28 @@ public class Verb {
         this.v3 = v3;
     }
 
-    public String getPropV1() {
-        return propV1;
+    public String getPronV1() {
+        return pronV1;
     }
 
-    public void setPropV1(String propV1) {
-        this.propV1 = propV1;
+    public void setPronV1(String pronV1) {
+        this.pronV1 = pronV1;
     }
 
-    public String getPropV2() {
-        return propV2;
+    public String getPronV2() {
+        return pronV2;
     }
 
-    public void setPropV2(String propV2) {
-        this.propV2 = propV2;
+    public void setPronV2(String pronV2) {
+        this.pronV2 = pronV2;
     }
 
-    public String getPropV3() {
-        return propV3;
+    public String getPronV3() {
+        return pronV3;
     }
 
-    public void setPropV3(String propV3) {
-        this.propV3 = propV3;
+    public void setPronV3(String pronV3) {
+        this.pronV3 = pronV3;
     }
 
     public String getDescription() {

@@ -23,46 +23,57 @@
             android:padding="12dp">
 
 
-            <ImageView
-                android:id="@+id/item_verb_add_bookmark_img"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/item_verb_ll"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_word_text"
-                tools:ignore="RtlCompat"
-                tools:src="@drawable/ic_baseline_bookmark_border_24_red" />
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-            <ImageView
-                android:id="@+id/item_verb_added_bookmark_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/item_word_text"
-                tools:ignore="RtlCompat"
-                tools:src="@drawable/ic_baseline_bookmark_24_red" />
+                <TextView
+                    android:id="@+id/item_word_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight=".8"
+                    android:lines="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    tools:text="@string/be" />
 
-            <TextView
-                android:id="@+id/item_word_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:lines="1"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/item_verb_add_bookmark_img"
-                app:layout_constraintHorizontal_bias=".0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/be" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/item_verb_add_bookmark_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        tools:src="@drawable/ic_baseline_bookmark_border_24_red" />
+
+
+                    <ImageView
+                        android:id="@+id/item_verb_added_bookmark_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:visibility="invisible"
+                        tools:src="@drawable/ic_baseline_bookmark_24_red" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/item_verb_one_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_word_text"
+                app:layout_constraintTop_toBottomOf="@id/item_verb_ll"
                 tools:text="Verb one" />
 
             <TextView
