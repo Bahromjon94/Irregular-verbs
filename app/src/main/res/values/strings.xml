@@ -12,5 +12,7 @@
     <string name="instagram" translatable="false">https://instagram.com/i.m_bahromjon</string>
     <string name="facebook" translatable="false">https://facebook.com/bahromjon.polat</string>
     <string name="bid">bid</string>
+    <string name="added">was added to favourites</string>
+    <string name="deleted">was deleted from favourites</string>
 
 </resources>

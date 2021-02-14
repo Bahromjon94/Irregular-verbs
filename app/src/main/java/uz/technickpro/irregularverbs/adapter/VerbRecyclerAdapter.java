@@ -1,7 +1,11 @@
 package uz.technickpro.irregularverbs.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
+import android.util.Log;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -26,6 +31,7 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
 
     private final Context context;
     private final List<Verb> verbs;
+
 
     public VerbRecyclerAdapter(Context context, List<Verb> verbs) {
         this.context = context;
@@ -52,25 +58,26 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
         holder.delFromFav.setImageResource(R.drawable.ic_baseline_bookmark_24_red);
 
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(context, FullInfoActivity.class);
-//
-//                intent.putExtra("word", verbs.get(position).getWord());
-//                intent.putExtra("v1", verbs.get(position).getV1());
-//                intent.putExtra("v2", verbs.get(position).getV2());
-//                intent.putExtra("v3", verbs.get(position).getV3());
-//                intent.putExtra("pronV1", verbs.get(position).getPronV1());
-//                intent.putExtra("pronV2", verbs.get(position).getPronV2());
-//                intent.putExtra("pronV3", verbs.get(position).getPronV3());
-//                intent.putExtra("description", verbs.get(position).getDescription());
-//
-//
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                builder.setTitle(verbs.get(position).getWord());
+                builder.setMessage(verbs.get(position).getV1());
+                builder.setMessage(verbs.get(position).getV2());
+                builder.setMessage(verbs.get(position).getV3());
+
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+            }
+        });
 
         holder.addToFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +85,8 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
 
                 holder.addToFav.setVisibility(View.INVISIBLE);
                 holder.delFromFav.setVisibility(View.VISIBLE);
+
+                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strAdded, Toast.LENGTH_SHORT).show();
 
                 Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was added");
             }
@@ -89,6 +98,8 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
 
                 holder.delFromFav.setVisibility(View.INVISIBLE);
                 holder.addToFav.setVisibility(View.VISIBLE);
+
+                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strDel, Toast.LENGTH_SHORT).show();
 
                 Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was clicked");
 
@@ -104,12 +115,14 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
 
     public class VerbHolder extends RecyclerView.ViewHolder {
 
-        TextView word;
-        TextView v1;
-        TextView v2;
-        TextView v3;
-        ImageView addToFav;
-        ImageView delFromFav;
+        private TextView word;
+        private TextView v1;
+        private TextView v2;
+        private TextView v3;
+        private ImageView addToFav;
+        private ImageView delFromFav;
+
+        private String strAdded, strDel;
 
 
         public VerbHolder(@NonNull View itemView) {
@@ -122,7 +135,10 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
             addToFav = itemView.findViewById(R.id.item_verb_add_bookmark_img);
             delFromFav = itemView.findViewById(R.id.item_verb_added_bookmark_img);
 
-            Log.d(TAG, "VerbHolder: was worked");
+            strAdded = itemView.getResources().getString(R.string.added);
+            strDel = itemView.getResources().getString(R.string.deleted);
+
+            Log.d(TAG, "VerbHolder: ");
 
         }
     }

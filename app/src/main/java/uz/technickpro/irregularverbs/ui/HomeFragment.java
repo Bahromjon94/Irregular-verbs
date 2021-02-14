@@ -47,12 +47,6 @@ public class HomeFragment extends Fragment {
 
         verbList();
 
-        rView.setRecyclerListener(new RecyclerView.RecyclerListener() {
-            @Override
-            public void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
         return root;
     }
 

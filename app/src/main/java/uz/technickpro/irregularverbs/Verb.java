@@ -26,6 +26,15 @@ public class Verb {
         this.v3 = v3;
     }
 
+    public Verb(String v1, String v2, String v3, String pronV1, String pronV2, String pronV3) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.v3 = v3;
+        this.pronV1 = pronV1;
+        this.pronV2 = pronV2;
+        this.pronV3 = pronV3;
+    }
+
     public String getWord() {
         return word;
     }

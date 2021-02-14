@@ -169,4 +169,6 @@
     <string name="send_mail">Xabar jo\'natmoq</string>
     <string name="tg_channel">Telegram kanal</string>
     <string name="bid">savdolashmoq</string>
+    <string name="added">tanlanganlarga qo\'shildi</string>
+    <string name="deleted">tanlanganlardan o\'chirildi</string>
 </resources>
