@@ -14,7 +14,10 @@
         android:background="@drawable/web_design"
         app:layout_constraintBottom_toTopOf="@id/info_fg_bottom_const"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight=".3" />
+        app:layout_constraintVertical_weight=".3">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -24,11 +27,11 @@
         android:src="@drawable/abs"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="3dp"
-        app:layout_constraintHorizontal_bias=".9"
-        app:layout_constraintTop_toBottomOf="@id/info_fg_top_const"
         app:layout_constraintBottom_toTopOf="@id/info_fg_bottom_const"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/info_fg_top_const" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,10 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:background="@drawable/custom_text"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawablePadding="12dp"
-            android:padding="12dp"
             android:text="@string/email_address"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,10 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/custom_text"
-            android:drawableStart="@drawable/ic_baseline_group_24"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:drawableStart="@drawable/telegram"
             android:text="@string/tg_channel"
             app:layout_constraintStart_toStartOf="@id/info_fg_email_text"
             app:layout_constraintTop_toBottomOf="@id/info_fg_email_text"
@@ -79,11 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/custom_text"
-            android:drawableStart="@drawable/ic_baseline_info_24"
+            android:drawableStart="@drawable/insta"
             android:drawablePadding="12dp"
-            android:padding="12dp"
-            android:text="@string/instagram"
+            android:text="@string/insta_profile"
             app:layout_constraintStart_toStartOf="@id/info_fg_tg_channel_text"
             app:layout_constraintTop_toBottomOf="@id/info_fg_tg_channel_text"
             tools:ignore="RtlCompat" />
@@ -94,11 +91,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/custom_text"
-            android:drawableStart="@drawable/ic_baseline_bookmark_24"
+            android:drawableStart="@drawable/ic_baseline_facebook_24"
             android:drawablePadding="12dp"
-            android:padding="12dp"
-            android:text="@string/facebook"
+            android:text="@string/facebook_profile"
             app:layout_constraintStart_toStartOf="@id/info_fg_instagram_text"
             app:layout_constraintTop_toBottomOf="@id/info_fg_instagram_text"
             tools:ignore="RtlCompat" />
@@ -110,11 +105,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/custom_text"
-            android:drawableStart="@drawable/ic_baseline_bookmark_border_24"
+            android:drawableStart="@drawable/insta"
             android:drawablePadding="12dp"
-            android:padding="12dp"
-            android:text="GitHub"
+            android:text="@string/github_profile"
             app:layout_constraintStart_toStartOf="@id/info_fb_text"
             app:layout_constraintTop_toBottomOf="@id/info_fb_text"
             tools:ignore="RtlCompat" />

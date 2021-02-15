@@ -45,19 +45,19 @@ public class FullInfoActivity extends AppCompatActivity implements View.OnClickL
         v1 = bundle.getString("v1");
         v2 = bundle.getString("v2");
         v3 = bundle.getString("v3");
-        pronV1 = bundle.getString("pronV1");
-        pronV2 = bundle.getString("pronV2");
-        pronV3 = bundle.getString("pronV3");
-        description = bundle.getString("description");
+//        pronV1 = bundle.getString("pronV1");
+//        pronV2 = bundle.getString("pronV2");
+//        pronV3 = bundle.getString("pronV3");
+//        description = bundle.getString("description");
 
         txtWord.setText(word);
         txtV1.setText(v1);
         txtV2.setText(v2);
         txtV3.setText(v3);
-        txtPronV1.setText(pronV1);
-        txtPronV2.setText(pronV2);
-        txtPronV3.setText(pronV3);
-        txtDescription.setText(description);
+//        txtPronV1.setText(pronV1);
+//        txtPronV2.setText(pronV2);
+//        txtPronV3.setText(pronV3);
+//        txtDescription.setText(description);
 
 
         imgChoose.setOnClickListener(this);

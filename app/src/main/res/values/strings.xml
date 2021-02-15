@@ -14,5 +14,10 @@
     <string name="bid">bid</string>
     <string name="added">was added to favourites</string>
     <string name="deleted">was deleted from favourites</string>
+    <string name="insta_profile">i.m_bahromjon</string>
+    <string name="facebook_profile">Bahromjon Po\'lat</string>
+    <string name="github_profile">Bahromjon94</string>
+    <string name="message_subject">Feedback \"Irregular verbs\'\" app</string>
+    <string name="message_title">Send message</string>
 
 </resources>

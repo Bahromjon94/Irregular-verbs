@@ -31,11 +31,13 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
 
     private final Context context;
     private final List<Verb> verbs;
+    private OnClickListener listener;
 
 
-    public VerbRecyclerAdapter(Context context, List<Verb> verbs) {
+    public VerbRecyclerAdapter(Context context, List<Verb> verbs, OnClickListener listener) {
         this.context = context;
         this.verbs = verbs;
+        this.listener = listener;
     }
 
     @NonNull
@@ -50,6 +52,8 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
     @Override
     public void onBindViewHolder(@NonNull VerbHolder holder, int position) {
 
+        Verb verb = verbs.get(position);
+
         holder.word.setText(verbs.get(position).getWord());
         holder.v1.setText(verbs.get(position).getV1());
         holder.v2.setText(verbs.get(position).getV2());
@@ -57,54 +61,44 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
         holder.addToFav.setImageResource(R.drawable.ic_baseline_bookmark_border_24_red);
         holder.delFromFav.setImageResource(R.drawable.ic_baseline_bookmark_24_red);
 
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
-                builder.setTitle(verbs.get(position).getWord());
-                builder.setMessage(verbs.get(position).getV1());
-                builder.setMessage(verbs.get(position).getV2());
-                builder.setMessage(verbs.get(position).getV3());
-
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-            }
+        holder.itemView.setOnClickListener(v ->  {
+            listener.onItemClick(verb);
         });
 
-        holder.addToFav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                holder.addToFav.setVisibility(View.INVISIBLE);
-                holder.delFromFav.setVisibility(View.VISIBLE);
-
-                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strAdded, Toast.LENGTH_SHORT).show();
-
-                Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was added");
-            }
+        holder.addToFav.setOnClickListener(v -> {
+            listener.onFavClick(verb);
         });
 
-        holder.delFromFav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                holder.delFromFav.setVisibility(View.INVISIBLE);
-                holder.addToFav.setVisibility(View.VISIBLE);
-
-                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strDel, Toast.LENGTH_SHORT).show();
-
-                Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was clicked");
-
-            }
+        holder.delFromFav.setOnClickListener(v -> {
+            listener.onDelClick(verb);
         });
+
+//        holder.addToFav.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                holder.addToFav.setVisibility(View.INVISIBLE);
+//                holder.delFromFav.setVisibility(View.VISIBLE);
+//
+//                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strAdded, Toast.LENGTH_SHORT).show();
+//
+//                Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was added");
+//            }
+//        });
+//
+//        holder.delFromFav.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                holder.delFromFav.setVisibility(View.INVISIBLE);
+//                holder.addToFav.setVisibility(View.VISIBLE);
+//
+//                Toast.makeText(context, verbs.get(position).getWord() + " " + holder.strDel, Toast.LENGTH_SHORT).show();
+//
+//                Log.d(TAG, "onClick: " + verbs.get(position).getWord() + " was clicked");
+//
+//            }
+//        });
 
     }
 
@@ -141,5 +135,13 @@ public class VerbRecyclerAdapter extends RecyclerView.Adapter<VerbRecyclerAdapte
             Log.d(TAG, "VerbHolder: ");
 
         }
+    }
+
+
+    public interface OnClickListener {
+
+        void onItemClick(Verb verb);
+        void onFavClick(Verb verb);
+        void onDelClick(Verb verb);
     }
 }

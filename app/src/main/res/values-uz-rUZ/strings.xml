@@ -171,4 +171,8 @@
     <string name="bid">savdolashmoq</string>
     <string name="added">tanlanganlarga qo\'shildi</string>
     <string name="deleted">tanlanganlardan o\'chirildi</string>
+    <string name="insta_profile">i.m_bahromjon</string>
+    <string name="github_profile">Bahromjon94</string>
+    <string name="facebook_profile">Bahromjon Po\'lat</string>
+    <string name="message_subject">Noto\'g\'ri fe\'llar ilovasi haqida</string>
 </resources>

@@ -37,10 +37,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="12dp"
                     android:layout_weight=".8"
+                    android:ellipsize="end"
                     android:lines="1"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:ellipsize="end"
                     tools:text="@string/be" />
 
 

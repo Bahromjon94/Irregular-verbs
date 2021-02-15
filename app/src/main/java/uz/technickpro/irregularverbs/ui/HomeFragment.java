@@ -1,11 +1,13 @@
 package uz.technickpro.irregularverbs.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import uz.technickpro.irregularverbs.FullInfoActivity;
 import uz.technickpro.irregularverbs.R;
 import uz.technickpro.irregularverbs.Verb;
 import uz.technickpro.irregularverbs.adapter.VerbRecyclerAdapter;
@@ -24,25 +27,67 @@ public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
 
+    private ImageView imgAdd, imgDel;
+
     private VerbRecyclerAdapter rAdapter;
     private RecyclerView rView;
     private List<Verb> verbs;
     private Context context;
+    private VerbRecyclerAdapter.OnClickListener listener;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        imgAdd = root.findViewById(R.id.item_verb_add_bookmark_img);
+        imgDel = root.findViewById(R.id.item_verb_added_bookmark_img);
+
         rView = root.findViewById(R.id.rView);
         rView.setHasFixedSize(true);
         verbs = new ArrayList<>();
+
+        listener = new VerbRecyclerAdapter.OnClickListener() {
+            @Override
+            public void onItemClick(Verb verb) {
+
+
+                Intent intent = new Intent(context, FullInfoActivity.class);
+                intent.putExtra("word", verb.getWord());
+                intent.putExtra("v1", verb.getV1());
+                intent.putExtra("v2", verb.getV2());
+                intent.putExtra("v3", verb.getV3());
+
+                startActivity(intent);
+
+                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFavClick(Verb verb) {
+
+                imgAdd.setVisibility(View.INVISIBLE);
+                imgDel.setVisibility(View.VISIBLE);
+
+                Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onDelClick(Verb verb) {
+
+                imgDel.setVisibility(View.INVISIBLE);
+                imgAdd.setVisibility(View.VISIBLE);
+
+                Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+
+            }
+        };
 
         GridLayoutManager layoutManager = new GridLayoutManager(context, 2);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
 
         rView.setLayoutManager(layoutManager);
-        rAdapter = new VerbRecyclerAdapter(context, verbs);
+        rAdapter = new VerbRecyclerAdapter(context, verbs, listener);
         rView.setAdapter(rAdapter);
 
         verbList();
