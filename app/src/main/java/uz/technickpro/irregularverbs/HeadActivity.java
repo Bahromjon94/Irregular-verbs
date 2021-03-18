@@ -46,6 +46,7 @@ public class HeadActivity extends AppCompatActivity {
 
             case R.id.menu_option_top:
                 Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+                break;
 
         }
         return super.onOptionsItemSelected(item);

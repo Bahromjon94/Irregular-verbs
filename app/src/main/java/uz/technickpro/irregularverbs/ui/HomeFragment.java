@@ -1,5 +1,7 @@
 package uz.technickpro.irregularverbs.ui;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import uz.technickpro.irregularverbs.FullInfoActivity;
 import uz.technickpro.irregularverbs.R;
 import uz.technickpro.irregularverbs.Verb;
@@ -25,12 +29,12 @@ import uz.technickpro.irregularverbs.adapter.VerbRecyclerAdapter;
 
 public class HomeFragment extends Fragment {
 
+
     private static final String TAG = "HomeFragment";
 
-    private ImageView imgAdd, imgDel;
+    private RecyclerView rView;
 
     private VerbRecyclerAdapter rAdapter;
-    private RecyclerView rView;
     private List<Verb> verbs;
     private Context context;
     private VerbRecyclerAdapter.OnClickListener listener;
@@ -40,17 +44,14 @@ public class HomeFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        imgAdd = root.findViewById(R.id.item_verb_add_bookmark_img);
-        imgDel = root.findViewById(R.id.item_verb_added_bookmark_img);
-
         rView = root.findViewById(R.id.rView);
+
         rView.setHasFixedSize(true);
         verbs = new ArrayList<>();
 
         listener = new VerbRecyclerAdapter.OnClickListener() {
             @Override
             public void onItemClick(Verb verb) {
-
 
                 Intent intent = new Intent(context, FullInfoActivity.class);
                 intent.putExtra("word", verb.getWord());
@@ -59,24 +60,17 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("v3", verb.getV3());
 
                 startActivity(intent);
-
                 Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFavClick(Verb verb) {
 
-                imgAdd.setVisibility(View.INVISIBLE);
-                imgDel.setVisibility(View.VISIBLE);
-
                 Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDelClick(Verb verb) {
-
-                imgDel.setVisibility(View.INVISIBLE);
-                imgAdd.setVisibility(View.VISIBLE);
 
                 Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
 
@@ -101,10 +95,11 @@ public class HomeFragment extends Fragment {
         verbs.add(new Verb(getResources().getString(R.string.abide), "abide", "abode ", "abode"));
         verbs.add(new Verb(getResources().getString(R.string.arise), "arise", "arose ", "arisen"));
         verbs.add(new Verb(getResources().getString(R.string.awake), "awake", "awoke ", "awoken"));
+        verbs.add(new Verb(getResources().getString(R.string.be), "be", "was / were", "been"));
         verbs.add(new Verb(getResources().getString(R.string.bear), "bear", "bore ", "borne/born"));
         verbs.add(new Verb(getResources().getString(R.string.beat), "beat", "beat ", "beaten"));
         verbs.add(new Verb(getResources().getString(R.string.become), "become", "became ", "become"));
-        verbs.add(new Verb(getResources().getString(R.string.beget), "beget", "begat/begot ", "begotten"));
+        verbs.add(new Verb(getResources().getString(R.string.beget), "beget", "begot ", "begotten"));
         verbs.add(new Verb(getResources().getString(R.string.begin), "begin", "began ", "begun"));
         verbs.add(new Verb(getResources().getString(R.string.bend), "bend", "bent ", "bent"));
         verbs.add(new Verb(getResources().getString(R.string.bet), "bet", "bet ", "bet"));
